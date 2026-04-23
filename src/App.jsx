@@ -20,7 +20,7 @@ const courses = [
   {
     title: 'Basic Pistol Instruction',
     icon: Target,
-    duration: '3.5 Hours',
+    duration: '8 Hours',
     level: 'Beginner Friendly',
     desc: 'A fundamentals-based class covering safe handling, storage, grip, stance, loading, unloading, sight alignment, and live-fire confidence.',
     highlights: ['Safe firearm handling', 'Range fundamentals', 'Beginner coaching', 'Confidence building'],
@@ -29,7 +29,7 @@ const courses = [
   {
     title: 'CCW Training',
     icon: ShieldCheck,
-    duration: '4 Hours',
+    duration: '8 Hours',
     level: 'Intermediate',
     desc: 'Practical concealed carry instruction focused on responsibility, defensive mindset, legal awareness, and everyday readiness.',
     highlights: ['Carry mindset', 'Defensive principles', 'Situational awareness', 'Responsible carry'],
@@ -38,7 +38,7 @@ const courses = [
   {
     title: 'Home Defense',
     icon: House,
-    duration: '3 Hours',
+    duration: '4 Hours',
     level: 'All Skill Levels',
     desc: 'Build a home-defense plan with practical firearm considerations, family coordination, safe staging, and decision-making under stress.',
     highlights: ['Planning and readiness', 'Safe staging', 'Communication', 'Defensive decision-making'],
@@ -47,10 +47,10 @@ const courses = [
 ]
 
 const schedule = [
-  { date: 'May 4, 2026', className: 'Basic Pistol Instruction', time: '10:00 AM - 1:30 PM', seats: '8 seats' },
-  { date: 'May 11, 2026', className: 'CCW Training', time: '9:00 AM - 1:00 PM', seats: '10 seats' },
+  { date: 'May 4, 2026', className: 'Basic Pistol Instruction', time: '8:00 AM - 4:00 PM', seats: '8 seats' },
+  { date: 'May 11, 2026', className: 'CCW Training', time: '8:00 AM - 4:00 PM', seats: '10 seats' },
   { date: 'May 18, 2026', className: 'Home Defense', time: '11:00 AM - 2:00 PM', seats: '8 seats' },
-  { date: 'May 25, 2026', className: 'Basic Pistol Instruction', time: '10:00 AM - 1:30 PM', seats: '8 seats' },
+  { date: 'May 25, 2026', className: 'Basic Pistol Instruction', time: '8:00 AM - 4:00 PM', seats: '8 seats' },
 ]
 
 const gallery = [
