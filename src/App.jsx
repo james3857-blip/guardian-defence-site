@@ -20,7 +20,7 @@ const courses = [
   {
     title: 'Basic Pistol Instruction',
     icon: Target,
-    duration: '8 Hours',
+    duration: '3.5 Hours',
     level: 'Beginner Friendly',
     desc: 'A fundamentals-based class covering safe handling, storage, grip, stance, loading, unloading, sight alignment, and live-fire confidence.',
     highlights: ['Safe firearm handling', 'Range fundamentals', 'Beginner coaching', 'Confidence building'],
@@ -29,7 +29,7 @@ const courses = [
   {
     title: 'CCW Training',
     icon: ShieldCheck,
-    duration: '8 Hours',
+    duration: '4 Hours',
     level: 'Intermediate',
     desc: 'Practical concealed carry instruction focused on responsibility, defensive mindset, legal awareness, and everyday readiness.',
     highlights: ['Carry mindset', 'Defensive principles', 'Situational awareness', 'Responsible carry'],
@@ -38,7 +38,7 @@ const courses = [
   {
     title: 'Home Defense',
     icon: House,
-    duration: '4 Hours',
+    duration: '3 Hours',
     level: 'All Skill Levels',
     desc: 'Build a home-defense plan with practical firearm considerations, family coordination, safe staging, and decision-making under stress.',
     highlights: ['Planning and readiness', 'Safe staging', 'Communication', 'Defensive decision-making'],
@@ -47,16 +47,16 @@ const courses = [
 ]
 
 const schedule = [
-  { date: 'May 4, 2026', className: 'Basic Pistol Instruction', time: '8:00 AM - 4:00 PM', seats: '8 seats' },
-  { date: 'May 11, 2026', className: 'CCW Training', time: '8:00 AM - 4:00 PM', seats: '10 seats' },
+  { date: 'May 4, 2026', className: 'Basic Pistol Instruction', time: '10:00 AM - 1:30 PM', seats: '8 seats' },
+  { date: 'May 11, 2026', className: 'CCW Training', time: '9:00 AM - 1:00 PM', seats: '10 seats' },
   { date: 'May 18, 2026', className: 'Home Defense', time: '11:00 AM - 2:00 PM', seats: '8 seats' },
-  { date: 'May 25, 2026', className: 'Basic Pistol Instruction', time: '8:00 AM - 4:00 PM', seats: '8 seats' },
+  { date: 'May 25, 2026', className: 'Basic Pistol Instruction', time: '10:00 AM - 1:30 PM', seats: '8 seats' },
 ]
 
 const gallery = [
   {
     title: 'Classroom Training',
-    image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80',
+    image: '/classroom.png',
   },
   {
     title: 'Hands-On Instruction',
@@ -84,7 +84,25 @@ const credentials = ['NRA', 'USCCA', 'RSO', 'Certified Firearms Instructor']
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [state, handleSubmit] = useForm("xjgjppdz");
+  const [state, handleSubmit] = useForm("YOUR_FORM_ID");
+  const mailtoHref = useMemo(() => {
+    const subject = encodeURIComponent(`Training Inquiry - ${formData.course || 'Guardian Defence'}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCourse: ${formData.course}\nPreferred Date: ${formData.date}\n\nMessage:\n${formData.message}`,
+    )
+    return `mailto:james3857@guardian-defence.com?subject=${subject}&body=${body}`
+  }, [formData])
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    window.location.href = mailtoHref
+  }
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
