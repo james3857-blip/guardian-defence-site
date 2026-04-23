@@ -55,7 +55,7 @@ const schedule = [
 
 const gallery = [
   {
-    title: 'MY NEW TEST IMAGE',
+    title: 'Classroom Training',
     image: '/classroom.png',
   },
   {
@@ -84,24 +84,7 @@ const credentials = ['NRA', 'USCCA', 'RSO', 'Certified Firearms Instructor']
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [state, handleSubmit] = useForm("YOUR_FORM_ID");
-  const mailtoHref = useMemo(() => {
-    const subject = encodeURIComponent(`Training Inquiry - ${formData.course || 'Guardian Defence'}`)
-    const body = encodeURIComponent(
-      `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCourse: ${formData.course}\nPreferred Date: ${formData.date}\n\nMessage:\n${formData.message}`,
-    )
-    return `mailto:james3857@guardian-defence.com?subject=${subject}&body=${body}`
-  }, [formData])
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    window.location.href = mailtoHref
-  }
+  const [state, handleSubmit] = useForm("xjgjppdz");
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
