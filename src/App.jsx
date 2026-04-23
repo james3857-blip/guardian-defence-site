@@ -55,7 +55,7 @@ const schedule = [
 
 const gallery = [
   {
-    title: 'Classroom Training',
+    title: 'MY NEW TEST IMAGE',
     image: '/classroom.png',
   },
   {
