@@ -1,4 +1,5 @@
-import React, { useMemo, useState } from 'react'
+import React, { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import {
   BadgeCheck,
   CalendarDays,
@@ -83,34 +84,7 @@ const credentials = ['NRA', 'USCCA', 'RSO', 'Certified Firearms Instructor']
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    course: 'Basic Pistol Instruction',
-    date: '',
-    message: '',
-  })
-
-  const mailtoHref = useMemo(() => {
-    const subject = encodeURIComponent(`Training Inquiry - ${formData.course || 'Guardian Defence'}`)
-    const body = encodeURIComponent(
-      `Name: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCourse: ${formData.course}\nPreferred Date: ${formData.date}\n\nMessage:\n${formData.message}`,
-    )
-    return `mailto:james3857@guardian-defence.com?subject=${subject}&body=${body}`
-  }, [formData])
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    window.location.href = mailtoHref
-  }
-
+  const [state, handleSubmit] = useForm("xjgjppdz");
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur">
@@ -327,28 +301,94 @@ export default function App() {
             <div className="mt-10 rounded-[1.5rem] bg-white/10 p-5">
               <p className="text-sm font-bold uppercase tracking-[0.15em] text-blue-100">Live-ready note</p>
               <p className="mt-3 text-sm leading-7 text-blue-50">
-                The inquiry form below works immediately by opening an email draft. To accept submissions directly on the website later, connect it to Formspree, Netlify Forms, or your web host's form handler.
+                The inquiry form below sends training requests directly through the website, so prospective students can contact you without opening their email app.
               </p>
             </div>
           </div>
 
           <div className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl">
             <h3 className="text-2xl font-black text-slate-900">Request Training</h3>
-            <p className="mt-2 text-slate-600">Fill this out and it will open a ready-to-send email inquiry.</p>
+            <p className="mt-2 text-slate-600">Fill this out and your training request will be sent directly through the website.</p>
             <form onSubmit={handleSubmit} className="mt-6 grid gap-4 sm:grid-cols-2">
-              <input name="firstName" value={formData.firstName} onChange={handleChange} className="rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73]" placeholder="First name" required />
-              <input name="lastName" value={formData.lastName} onChange={handleChange} className="rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73]" placeholder="Last name" required />
-              <input type="email" name="email" value={formData.email} onChange={handleChange} className="rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73] sm:col-span-2" placeholder="Email address" required />
-              <input name="phone" value={formData.phone} onChange={handleChange} className="rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73] sm:col-span-2" placeholder="Phone number" required />
-              <select name="course" value={formData.course} onChange={handleChange} className="rounded-2xl border border-slate-300 px-4 py-3 text-slate-700 outline-none focus:border-[#123f73] sm:col-span-2">
+              <input
+                name="firstName"
+                className="rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73]"
+                placeholder="First name"
+                required
+              />
+
+              <input
+                name="lastName"
+                className="rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73]"
+                placeholder="Last name"
+                required
+              />
+
+              <input
+                type="email"
+                name="email"
+                className="rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73] sm:col-span-2"
+                placeholder="Email address"
+                required
+              />
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+                className="sm:col-span-2 text-sm text-red-600"
+              />
+
+              <input
+                name="phone"
+                className="rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73] sm:col-span-2"
+                placeholder="Phone number"
+                required
+              />
+
+              <select
+                name="course"
+                className="rounded-2xl border border-slate-300 px-4 py-3 text-slate-700 outline-none focus:border-[#123f73] sm:col-span-2"
+                defaultValue="Basic Pistol Instruction"
+              >
                 <option>Basic Pistol Instruction</option>
                 <option>CCW Training</option>
                 <option>Home Defense</option>
                 <option>Private Instruction</option>
               </select>
-              <input type="text" name="date" value={formData.date} onChange={handleChange} className="rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73] sm:col-span-2" placeholder="Preferred date or timeframe" />
-              <textarea name="message" value={formData.message} onChange={handleChange} className="min-h-[150px] rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73] sm:col-span-2" placeholder="Tell me what type of training you are looking for" required />
-              <button type="submit" className="sm:col-span-2 rounded-2xl bg-[#123f73] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-[#123f73]/20 transition hover:-translate-y-0.5">Send Inquiry</button>
+
+              <input
+                type="text"
+                name="preferredDate"
+                className="rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73] sm:col-span-2"
+                placeholder="Preferred date or timeframe"
+              />
+
+              <textarea
+                name="message"
+                className="min-h-[150px] rounded-2xl border border-slate-300 px-4 py-3 outline-none placeholder:text-slate-400 focus:border-[#123f73] sm:col-span-2"
+                placeholder="Tell me what type of training you are looking for"
+                required
+              />
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+                className="sm:col-span-2 text-sm text-red-600"
+              />
+
+              <button
+                type="submit"
+                disabled={state.submitting}
+                className="sm:col-span-2 rounded-2xl bg-[#123f73] px-6 py-3 text-base font-semibold text-white shadow-lg shadow-[#123f73]/20 transition hover:-translate-y-0.5 disabled:opacity-60"
+              >
+                {state.submitting ? "Sending..." : "Send Inquiry"}
+              </button>
+
+              {state.succeeded && (
+                <p className="sm:col-span-2 rounded-2xl bg-green-50 px-4 py-3 text-sm font-medium text-green-700">
+                  Thank you. Your training request was sent successfully.
+                </p>
+              )}
             </form>
           </div>
         </div>
