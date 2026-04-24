@@ -238,9 +238,7 @@ export default function App() {
         <div className="mb-12 max-w-2xl">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#123f73]">Photo Gallery</p>
           <h2 className="mt-3 text-3xl font-black md:text-4xl">A strong visual section for your brand</h2>
-          <p className="mt-4 text-lg leading-8 text-slate-600">
-            Replace these starter photos with your own class, range, and training photos when you are ready.
-          </p>
+
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
