@@ -47,10 +47,10 @@ const courses = [
 ]
 
 const schedule = [
-  { date: 'May 4, 2026', className: 'Basic Pistol Instruction', time: '10:00 AM - 1:30 PM', seats: '8 seats' },
-  { date: 'May 11, 2026', className: 'CCW Training', time: '9:00 AM - 1:00 PM', seats: '10 seats' },
-  { date: 'May 18, 2026', className: 'Home Defense', time: '11:00 AM - 2:00 PM', seats: '8 seats' },
-  { date: 'May 25, 2026', className: 'Basic Pistol Instruction', time: '10:00 AM - 1:30 PM', seats: '8 seats' },
+  { date: 'May 0, 2026', className: 'Classes are forming', time: '00:00 AM - 00:00 PM', seats: '10 seats' },
+  { date: 'May 0, 2026', className: 'Classes are forming', time: '00:00 AM - 00:00 PM', seats: '10 seats' },
+  { date: 'May 0, 2026', className: 'Classes are forming', time: '00:00 AM - 00:00 PM', seats: '10 seats' },
+  { date: 'May 0, 2026', className: 'Classes are forming', time: '00:00 AM - 00:00 PM', seats: '10 seats' },
 ]
 
 const gallery = [
@@ -299,9 +299,7 @@ export default function App() {
 
             <div className="mt-10 rounded-[1.5rem] bg-white/10 p-5">
               <p className="text-sm font-bold uppercase tracking-[0.15em] text-blue-100">Live-ready note</p>
-              <p className="mt-3 text-sm leading-7 text-blue-50">
-                The inquiry form below sends training requests directly through the website, so prospective students can contact you without opening their email app.
-              </p>
+
             </div>
           </div>
 
