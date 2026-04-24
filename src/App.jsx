@@ -60,23 +60,23 @@ const gallery = [
   },
   {
     title: 'Hands-On Instruction',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
+    image: 'handson.png',
   },
   {
     title: 'Range Preparation',
-    image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+    image: 'range1.png',
   },
   {
     title: 'Student Focus',
-    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80',
+    image: 'focus.png',
   },
   {
     title: 'Safety First',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
+    image: 'Safety.png',
   },
   {
     title: 'Practical Coaching',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80',
+    image: 'coaching.png',
   },
 ]
 
