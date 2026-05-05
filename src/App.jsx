@@ -24,16 +24,16 @@ const courses = [
     level: 'Beginner Friendly',
     desc: 'A fundamentals-based class covering safe handling, storage, grip, stance, loading, unloading, sight alignment, and live-fire confidence.',
     highlights: ['Safe firearm handling', 'Range fundamentals', 'Beginner coaching', 'Confidence building'],
-    price: '$125',
+    price: '$75',
   },
   {
     title: 'CCW Training',
     icon: ShieldCheck,
-    duration: '4 Hours',
+    duration: '6 Hours',
     level: 'Intermediate',
     desc: 'Practical concealed carry instruction focused on responsibility, defensive mindset, legal awareness, and everyday readiness.',
     highlights: ['Carry mindset', 'Defensive principles', 'Situational awareness', 'Responsible carry'],
-    price: '$150',
+    price: '$100',
   },
   {
     title: 'Home Defense',
@@ -47,10 +47,9 @@ const courses = [
 ]
 
 const schedule = [
-  { date: 'May 0, 2026', className: 'Classes are forming', time: '00:00 AM - 00:00 PM', seats: '10 seats' },
-  { date: 'May 0, 2026', className: 'Classes are forming', time: '00:00 AM - 00:00 PM', seats: '10 seats' },
-  { date: 'May 0, 2026', className: 'Classes are forming', time: '00:00 AM - 00:00 PM', seats: '10 seats' },
-  { date: 'May 0, 2026', className: 'Classes are forming', time: '00:00 AM - 00:00 PM', seats: '10 seats' },
+  { date: 'May 16, 2026', className: 'Basic Pistol Instruction', time: '08:00 AM - 10:30 PM', seats: '8 seats' },
+  { date: 'May 16, 2026', className: 'Handgun Cleaning', time: '11:30 AM - 12:30 PM', seats: '8 seats' },
+  { date: 'May 16, 2026', className: 'Range Safety', time: '1:30 AM -2:30 PM', seats: '8 seats' },
 ]
 
 const gallery = [
