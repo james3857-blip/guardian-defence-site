@@ -47,9 +47,8 @@ const courses = [
 ]
 
 const schedule = [
-  { date: 'May 16, 2026', className: 'Basic Pistol Instruction', time: '08:00 AM - 10:30 PM', seats: '8 seats' },
-  { date: 'May 16, 2026', className: 'Handgun Cleaning', time: '11:30 AM - 12:30 PM', seats: '8 seats' },
-  { date: 'May 16, 2026', className: 'Range Safety', time: '1:30 AM -2:30 PM', seats: '8 seats' },
+  { date: 'June 20th, 2026', className: 'Basic Pistol Instruction (CCW)', time: '08:00 AM - 04:00 PM', seats: '8 seats' },
+
 ]
 
 const gallery = [
